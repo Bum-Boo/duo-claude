@@ -1,6 +1,6 @@
 # duo-claude
 
-[English](README) | [한국어](README.ko) | [日本語](README.ja) | **中文**
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | **中文**
 
 面向 Claude Code 的多邻国式复习技能。Claude 每完成一段工作,就用该工作的关键词出四选一题目,答错的题会按间隔重复计划再次出现。题目使用韩语。
 

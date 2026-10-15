@@ -1,6 +1,6 @@
 # duo-claude
 
-[English](README) | [한국어](README.ko) | **日本語** | [中文](README.zh-CN)
+[English](README.md) | [한국어](README.ko.md) | **日本語** | [中文](README.zh-CN.md)
 
 Claude Code 向けのデュオリンゴ風復習スキルです。Claude が作業のひとまとまりを終えると、その作業のキーワードで4択問題を出し、間違えた問題は間隔反復のスケジュールで再出題します。問題は韓国語で出ます。
 

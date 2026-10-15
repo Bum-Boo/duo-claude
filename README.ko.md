@@ -1,6 +1,6 @@
 # duo-claude
 
-[English](README) | **한국어** | [日本語](README.ja) | [中文](README.zh-CN)
+[English](README.md) | **한국어** | [日本語](README.ja.md) | [中文](README.zh-CN.md)
 
 Claude Code용 듀오링고식 복습 스킬입니다. Claude가 작업 한 덩어리를 끝내면 그 작업의 키워드로 4지선다 문제를 내고, 틀린 문제는 간격 반복 일정에 맞춰 다시 냅니다. 문제는 한국어로 나옵니다.
 

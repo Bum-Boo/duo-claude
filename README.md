@@ -1,6 +1,6 @@
 # duo-claude
 
-**English** | [한국어](README.ko) | [日本語](README.ja) | [中文](README.zh-CN)
+**English** | [한국어](README.ko.md) | [日本語](README.ja.md) | [中文](README.zh-CN.md)
 
 Duolingo-style review for Claude Code. After Claude finishes a chunk of work, it quizzes you with 4-choice questions on the keywords from that work, and brings back the ones you got wrong on a spaced-repetition schedule. Questions are written in Korean.
 
