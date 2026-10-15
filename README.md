@@ -1,8 +1,8 @@
 # duo-claude
 
-Duolingo-style review for Claude Code. After Claude finishes a chunk of work, it quizzes you with 4-choice questions on the keywords from that work, and brings back the ones you got wrong on a spaced-repetition schedule. Questions are in Korean.
+**English** | [한국어](README.ko) | [日本語](README.ja) | [中文](README.zh-CN)
 
-작업이 끝날 때마다 그 작업의 키워드를 4지선다로 내서 복습시키는 Claude Code 스킬입니다.
+Duolingo-style review for Claude Code. After Claude finishes a chunk of work, it quizzes you with 4-choice questions on the keywords from that work, and brings back the ones you got wrong on a spaced-repetition schedule. Questions are written in Korean.
 
 ## Install
 
