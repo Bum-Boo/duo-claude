@@ -113,6 +113,8 @@ class Malformed(Base):
     def test_bad_due_and_command(self):
         self.assert_rejected("due", "abc")
         self.assert_rejected("due", "-1")
+        self.assert_rejected("due", "1", "extra")
+        self.assert_rejected("stats", "extra")
         self.assert_rejected("frobnicate")
 
     def test_missing_store_not_created_by_bad_args(self):
@@ -127,6 +129,8 @@ class CorruptStore(Base):
         "not object": b'[1,2]\n',
         "missing field": '{"keyword":"k","box":1,"next":"2030-01-01","seen":0}\n'.encode(),
         "bad box": '{"keyword":"k","box":9,"next":"2030-01-01","seen":0,"wrong":0}\n'.encode(),
+        "basic-format date": '{"keyword":"k","box":1,"next":"20260101","seen":0,"wrong":0}\n'.encode(),
+        "non-padded date": '{"keyword":"k","box":1,"next":"2026-1-1","seen":0,"wrong":0}\n'.encode(),
         "bad date": '{"keyword":"k","box":1,"next":"soon","seen":0,"wrong":0}\n'.encode(),
         "invalid utf8": b'{"keyword":"\xff\xfe"}\n',
     }

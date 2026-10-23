@@ -29,10 +29,12 @@ def _check_item(it, n):
     for f in ("seen", "wrong"):
         if not _is_int(it.get(f)) or it[f] < 0:
             raise StoreError(f"{where}: '{f}'는 0 이상의 정수여야 합니다.")
-    try:
-        dt.date.fromisoformat(it["next"])
+    try:  # due/stats compare dates lexically, so only canonical YYYY-MM-DD is safe
+        ok = dt.date.fromisoformat(it["next"]).isoformat() == it["next"]
     except (KeyError, TypeError, ValueError):
-        raise StoreError(f"{where}: 'next'는 YYYY-MM-DD 날짜여야 합니다.")
+        ok = False
+    if not ok:
+        raise StoreError(f"{where}: 'next'는 YYYY-MM-DD 형식의 날짜여야 합니다.")
 
 
 def load():
@@ -112,6 +114,8 @@ def main():
     cmd = argv[1] if len(argv) > 1 else "due"
     if cmd == "due":  # print due items as JSON
         n = 4
+        if len(argv) > 3:
+            usage("due는 [n] 인자 하나까지만 받습니다.")
         if len(argv) > 2:
             try:
                 n = int(argv[2])
@@ -158,6 +162,8 @@ def main():
             items.append(it)
             save(items)
     elif cmd == "stats":
+        if len(argv) != 2:
+            usage("stats는 인자를 받지 않습니다.")
         items = load()
         weak = sorted(items, key=lambda i: -i["wrong"])[:5]
         print(json.dumps({"total": len(items), "due": sum(i["next"] <= today.isoformat() for i in items),
